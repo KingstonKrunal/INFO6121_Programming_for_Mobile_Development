@@ -1,5 +1,6 @@
-public class MovieMembership {
-    private String membarName;
+public abstract class MovieMembership {
+    // defined needed variables
+    private String memberName;
     private String nextMovie;
     private String theatreType;
     private int showHour;
@@ -7,8 +8,10 @@ public class MovieMembership {
     private String snack;
     private int points;
 
+    // 1st Constructor
     public MovieMembership(String mName) {
-        membarName = mName;
+        // initialize all variables
+        memberName = mName;
         nextMovie = "unknown";
         theatreType = "standard";
         showHour = 0;
@@ -17,8 +20,10 @@ public class MovieMembership {
         points = 0;
     }
 
+    // 2nd Constructor
     public MovieMembership(String mName, String nMovie, String tType, int sHour, int sMinute, String snk) {
-        membarName = mName;
+        // initialize all variables
+        memberName = mName;
         nextMovie = nMovie;
         theatreType = tType;
         showHour = sHour;
@@ -27,60 +32,75 @@ public class MovieMembership {
         points = 0;
     }
 
-    public static String getMemberName() {
+    // return member name
+    public String getMemberName() {
         return memberName;
     }
 
-    public static String getNextMovie() {
+    // return next movie name
+    public String getNextMovie() {
         return nextMovie;
     }
 
-    public static int getPoints() {
+    // return member points
+    public int getPoints() {
         return points;
     }
 
-    public static String getSnack() {
+    // return snack name
+    public String getSnack() {
         return snack;
     }
 
-    public static String getTheatreType() {
+    // return theatre type
+    public String getTheatreType() {
         return theatreType;
     }
 
-    public static void setNextMovie(String nMovie) {
+    // set next movie
+    public void setNextMovie(String nMovie) {
         nextMovie = nMovie;
     }
 
-    public static void setSnack(String snk) {
+    // set snack
+    public void setSnack(String snk) {
         snack = snk;
     }
 
-    public static void setTheatreType(String tType) {
+    // set theatre type
+    public void setTheatreType(String tType) {
         theatreType = tType;
     }
 
-    public static void setShowTime(int sHour, int sMinute) {
+    // set show time
+    public void setShowTime(int sHour, int sMinute) {
         showHour = sHour;
         showMinute = sMinute;
     }
 
-    public static String displayShowTime() {
-        return (showHour + ":" + showMinute);
+    // display show time
+    public String displayShowTime() {
+        return (showHour + ":" + showMinute); // return time in HH:MM format
     }
 
-    public static void addPoints(int pnts) {
+    // Add points to member profile
+    public void addPoints(int pnts) {
         points += pnts;
     }
 
-    public static String getMemberDetails() {
+    // return all member details with show time and points
+    public String getMemberDetails() {
         return ("Member Name: " + memberName + "\nNext Movie: " + nextMovie + "\nTheatre Type: " + theatreType
                 + "\nShow Hour: " + showHour + "Show Minute: " + showMinute + "\nShow Snack: " + snack
                 + "\nPoints: " + points);
     }
 
+    // abstract method which is implemented in subclass
     public abstract String returnMembershipRank();
 
+    // abstract method which is implemented in subclass
     public abstract void printMemberBenefits();
 
+    // abstract method which is implemented in subclass
     public abstract void purchaseMovieTicket(double tPrice, String nMovie, String tType, int sHour, int sMinute, String snk);
 }

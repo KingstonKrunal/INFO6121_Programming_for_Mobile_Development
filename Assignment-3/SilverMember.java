@@ -38,14 +38,10 @@ public class SilverMember extends MovieMembership {
     // Get member details with their membership class
     public String getMemberDetails() {
         String parentString = super.getMemberDetails(); // get member details from parent class MovieMembership
-        String rankString = returnMembershipRank();
+        String rankString = returnMembershipRank(); // get membership rank
 
         return (parentString + "\nMember Class:" + rankString); // return member information with their rank
     }
-
-//    public int setTicketPrice() {
-//        return (int)((Math.random() * (30 - 10)) + 10);
-//    }
 
     @Override
     // return membership rank i.e. Silver

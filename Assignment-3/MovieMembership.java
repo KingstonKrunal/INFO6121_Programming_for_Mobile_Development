@@ -84,8 +84,8 @@ public abstract class MovieMembership {
     }
 
     // Add points to member profile
-    public void addPoints(int pnts) {
-        points += pnts;
+    public void addPoints(int point) {
+        points += point;
     }
 
     // return all member details with show time and points

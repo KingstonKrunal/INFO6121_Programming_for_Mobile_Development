@@ -1,6 +1,6 @@
 public abstract class MovieMembership {
     // defined needed variables
-    private String memberName;
+    private final String memberName;
     private String nextMovie;
     private String theatreType;
     private int showHour;

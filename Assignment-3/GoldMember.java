@@ -36,13 +36,14 @@ public class GoldMember extends SilverMember implements VIPPrivilege {
     @Override
     public void accessVIPLounge() {
         Scanner scanner = new Scanner(System.in); // create a scanner object
+        System.out.println("Please enter your password: ");
         int inputPassword = scanner.nextInt(); // take input from the user and store it to inputPassword variable
 
         // checks if password match or not
         if (inputPassword == PASSWORD) {
             validCredentials = true; // set valid credentials value to true
 
-            System.out.println("\nAccess Granted!"); // print access granted on the screen
+            System.out.println("Access Granted!"); // print access granted on the screen
         }
     }
 
@@ -52,7 +53,7 @@ public class GoldMember extends SilverMember implements VIPPrivilege {
         if (validCredentials) {
             setSnack("Alcohol"); // calling a parent class MovieMembership method and set alcohol as a snack
 
-            return "\nEnjoy your beverage"; // return a string value
+            return "Enjoy your beverage"; // return a string value
         } else {
             return "\nA beverage can't be purchased because no valid password has been entered"; // if valid credentials is false this will return
         }

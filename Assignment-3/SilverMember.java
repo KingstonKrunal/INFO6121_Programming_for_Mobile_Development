@@ -37,10 +37,10 @@ public class SilverMember extends MovieMembership {
 
     // Get member details with their membership class
     public String getMemberDetails() {
-        String parentString = super.getMemberDetails(); // get member details from parent class MovieMembership
-        String rankString = returnMembershipRank(); // get membership rank
+//        String parentString = super.getMemberDetails(); // get member details from parent class MovieMembership
+//        String rankString = returnMembershipRank(); // get membership rank
 
-        return (parentString + "\nMember Class:" + rankString); // return member information with their rank
+        return (super.getMemberDetails() /* + "\nMember Rank:" + rankString */); // return member information with their rank
     }
 
     @Override
@@ -52,7 +52,7 @@ public class SilverMember extends MovieMembership {
     @Override
     // Print discount rate and points rate
     public void printMemberBenefits() {
-        System.out.println("\nDiscount Rate: " + discountRate + "\nPoints Rate: " + pointRate);
+        System.out.println("Discount Rate: " + (discountRate * 100) + "%" + "\nPoints Rate: " + pointRate);
     }
 
     @Override

@@ -5,6 +5,8 @@ public class IMAXMember extends MovieMembership {
     public IMAXMember(String mName) {
         super(mName); // invoke parent class MovieMembership constructor with 1 argument
 
+        addPoints(25);
+
         discountRate = 0.5; // set discount rate
         pointRate = 1.3; // set points rate
     }
@@ -12,16 +14,18 @@ public class IMAXMember extends MovieMembership {
     public IMAXMember(String mName, String nMovie, String tType, int sHour, int sMinute, String snk) {
         super(mName, nMovie, tType, sHour, sMinute, snk); // invoke parent class MovieMembership constructor with 6 arguments
 
+        addPoints(25);
+
         discountRate = 0.5; // set discount rate
         pointRate = 1.3; // set points rate
     }
 
     // Get member details with their membership class
     public String getMemberDetails() {
-        String parentString = super.getMemberDetails(); // get member details from parent class MovieMembership
-        String rankString = returnMembershipRank(); // get membership rank
+//        String parentString = super.getMemberDetails(); // get member details from parent class MovieMembership
+//        String rankString = returnMembershipRank(); // get membership rank
 
-        return (parentString + "\nMember Class:" + rankString); // return member information with their rank
+        return (super.getMemberDetails() /* + "\nMember Rank:" + rankString */); // return member information with their rank
     }
 
     @Override
@@ -32,7 +36,7 @@ public class IMAXMember extends MovieMembership {
     @Override
     // Print discount rate and points rate
     public void printMemberBenefits() {
-        System.out.println("\nDiscount Rate: " + discountRate + "\nPoints Rate: " + pointRate);
+        System.out.println("Discount Rate: " + (discountRate * 100) + "%" + "\nPoints Rate: " + pointRate);
     }
 
     @Override

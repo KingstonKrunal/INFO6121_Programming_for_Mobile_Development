@@ -9,14 +9,7 @@ public class MovieMembershipTest {
 
         // loop to use written methods invoked by 3 classes
         for (int i = 0; i < 3; i++) {
-            System.out.println(movieMembershipArray[i].getMemberName()
-                    + movieMembershipArray[i].returnMembershipRank()
-                    + movieMembershipArray[i].getNextMovie()
-                    + movieMembershipArray[i].getPoints()
-                    + movieMembershipArray[i].getSnack()
-                    + movieMembershipArray[i].getTheatreType()
-                    + movieMembershipArray[i].displayShowTime()
-                    + movieMembershipArray[i].getMemberDetails());
+            System.out.println(movieMembershipArray[i].getMemberDetails());
 
             movieMembershipArray[i].printMemberBenefits();
         }

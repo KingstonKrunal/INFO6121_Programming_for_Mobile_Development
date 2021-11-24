@@ -27,16 +27,17 @@ public class GoldMember extends SilverMember implements VIPPrivilege {
     }
 
     public String getMemberDetails() {
-        String parentString = super.getMemberDetails(); // get member details from parent class MovieMembership
-        String rankString = returnMembershipRank(); // get membership rank
+//        String parentString = super.getMemberDetails(); // get member details from parent class MovieMembership
+//        String rankString = returnMembershipRank(); // get membership rank
 
-        return (parentString + "\nMember Class:" + rankString + "\nVIP Privilege: TRUE"); // return member information with their rank and privilege
+        return (super.getMemberDetails() /* + "\nMember Rank:" + rankString + "\nVIP Privilege: TRUE" */); // return member information with their rank and privilege
     }
 
     @Override
     public void accessVIPLounge() {
         Scanner scanner = new Scanner(System.in); // create a scanner object
-        System.out.println("Please enter your password: ");
+
+        System.out.println("\nPlease enter your password: ");
         int inputPassword = scanner.nextInt(); // take input from the user and store it to inputPassword variable
 
         // checks if password match or not

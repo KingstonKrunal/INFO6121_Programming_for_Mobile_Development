@@ -88,11 +88,36 @@ public abstract class MovieMembership {
         points += point;
     }
 
+    int counter = 0; // counter to check whether to print sentence vise or label vise
+
     // return all member details with show time and points
     public String getMemberDetails() {
-        return ("Member Name: " + memberName + "\nNext Movie: " + nextMovie + "\nTheatre Type: " + theatreType
-                + "\nShow Hour: " + showHour + "Show Minute: " + showMinute + "\nShow Snack: " + snack
-                + "\nPoints: " + points);
+        ++counter; // increment counter by 1
+
+        if (counter <= 1) {
+            if (returnMembershipRank().equals("Gold")) {
+                return ("\nMember Name: " + memberName + "\nMember Rank:" + returnMembershipRank() + "\nPoints: " + points + "\nNext Movie: " + nextMovie
+                        + "\nTheatre Type: " + theatreType + "\nShow Time: " + showHour + ":" + showMinute + "\nSnack: " + snack + "\nThis membership card belongs to "
+                        + memberName + ". " + "They have " + points + " points. Their next movie is " + nextMovie + " at " + showHour + ":" + showMinute
+                        + " with a " + theatreType + " screening. \nThey will be having " + snack + " as a snack. They have " + returnMembershipRank()
+                        + " membership. and VIP privileges.");
+            } else {
+                return ("\nMember Name: " + memberName + "\nMember Rank:" + returnMembershipRank() + "\nPoints: " + points + "\nNext Movie: " + nextMovie
+                        + "\nTheatre Type: " + theatreType + "\nShow Time: " + showHour + ":" + showMinute + "\nSnack: " + snack + "\nThis membership card belongs to "
+                        + memberName + ". " + "They have " + points + " points. Their next movie is " + nextMovie + " at " + showHour + ":" + showMinute
+                        + " with a " + theatreType + " screening. \nThey will be having " + snack + " as a snack. They have " + returnMembershipRank() + " membership.");
+            }
+        } else {
+            if (returnMembershipRank().equals("Gold")) {
+                return ("\nThis membership card belongs to " + memberName + ". "
+                        + "They have " + points + " points. Their next movie is " + nextMovie + " at " + showHour + ":" + showMinute + " with a " + theatreType
+                        + " screening. \nThey will be having " + snack + " as a snack. They have " + returnMembershipRank() + " membership. and VIP privileges.");
+            } else {
+                return ("\nThis membership card belongs to " + memberName + ". "
+                        + "They have " + points + " points. Their next movie is " + nextMovie + " at " + showHour + ":" + showMinute + " with a " + theatreType
+                        + " screening. \nThey will be having " + snack + " as a snack. They have " + returnMembershipRank() + " membership.");
+            }
+        }
     }
 
     // abstract method which is implemented in subclass

@@ -1,3 +1,9 @@
+// Program Name: MovieMembershipTest
+// Author: Krunal Shah
+// Date: 2021/11/21
+// Purpose: The program will test movie membership and booking movies functinality by invoking membership, silver member, gold member,
+// and imax member class methods.
+
 public class MovieMembershipTest {
     public static void main(String[] args) {
         // Creating objects of each class with values
